@@ -3,77 +3,159 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>我的个人在线简历</title>
+    <title>个人简历 - 口译员</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&family=Playfair+Display:wght@400;700&display=swap" rel="stylesheet">
     <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
+        /* 自定义工具类 */
+        .font-playfair {
+            font-family: 'Playfair Display', serif;
         }
-        body {
-            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
-            background-color: #f0f2f5;
-            color: #333;
-            line-height: 1.6;
+        .font-inter {
+            font-family: 'Inter', sans-serif;
         }
-        .container {
-            max-width: 800px;
-            margin: 50px auto;
-            padding: 30px;
-            background-color: #fff;
-            border-radius: 12px;
-            box-shadow: 0 2px 15px rgba(0, 0, 0, 0.08);
+        .grain-bg {
+            background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.65' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)'/%3E%3C/svg%3E");
         }
-        h1 {
-            color: #2c3e50;
-            font-size: 2.2rem;
-            margin-bottom: 20px;
-            border-bottom: 2px solid #42b983;
-            padding-bottom: 10px;
+        .nav-btn {
+            @apply px-4 py-2 rounded-md font-medium transition-all duration-300 hover:scale-105;
         }
-        h2 {
-            color: #444;
-            font-size: 1.5rem;
-            margin: 30px 0 15px;
-        }
-        p {
-            margin-bottom: 15px;
-            font-size: 1.05rem;
-        }
-        ul {
-            margin-left: 25px;
-            margin-bottom: 15px;
-        }
-        li {
-            margin-bottom: 8px;
-        }
-        img {
-            max-width: 100%;
-            border-radius: 8px;
-            margin: 15px 0;
-            box-shadow: 0 1px 5px rgba(0, 0, 0, 0.1);
+        .card-hover {
+            @apply transition-all duration-500 hover:scale-[1.02] hover:shadow-xl;
         }
     </style>
 </head>
-<body>
-    <div class="container">
-        <h1>我的个人在线简历</h1>
+<body class="font-inter text-gray-900">
+    <!-- 导航栏 -->
+    <header class="fixed w-full z-50 px-4 py-4 flex justify-between items-center">
+        <div class="w-10 h-10 rounded-full bg-white flex items-center justify-center font-bold">
+            G·A
+        </div>
+        <nav class="hidden md:flex space-x-4">
+            <a href="#home" class="nav-btn bg-orange-500 text-white">Home</a>
+            <a href="#about" class="nav-btn bg-green-500 text-white">About</a>
+            <a href="#projects" class="nav-btn bg-blue-400 text-white">Projects</a>
+            <a href="#certifications" class="nav-btn bg-purple-500 text-white">Certifications</a>
+        </nav>
+        <!-- 移动端菜单按钮 -->
+        <button class="md:hidden text-white text-2xl">☰</button>
+    </header>
 
-        <h2>基本信息</h2>
-        <p>擅长中英口译、英语教学、海外项目协作、自媒体内容创作。</p >
+    <!-- 主页英雄区 -->
+    <section id="home" class="relative h-screen bg-black overflow-hidden">
+        <div class="absolute inset-0 grain-bg opacity-20"></div>
+        <img src="https://images.unsplash.com/photo-1568901346375-23c9450c58cd?auto=format&fit=crop&w=1600&q=80" 
+             alt="Hero Background" 
+             class="absolute inset-0 w-full h-full object-cover opacity-70">
+        <div class="absolute bottom-0 left-0 w-full p-8 md:p-16">
+            <h1 class="text-[clamp(2.5rem,10vw,6rem)] font-extrabold text-white leading-none tracking-tight">
+                [王帅]
+            </h1>
+            <p class="text-xl md:text-2xl text-gray-200 mt-4">专业口译员 | 英语 & 经济学双学士 | 翻译硕士</p>
+        </div>
+    </section>
 
-        <h2>口译与实践项目</h2>
-        <p>参与展会口译、商务交流、外事活动。</p >
-        
-        <img src="https://raw.githubusercontent.com/13846475807-sudo/hellogithub/main/%E5%BE%AE%E4%BF%A1%E5%9B%BE%E7%89%87_20260118000824_590_1072%20-%20%E5%89%AF%E6%9C%AC.jpg">
-        <img src="https://raw.githubusercontent.com/13846475807-sudo/hellogithub/blob/main/%E5%BE%AE%E4%BF%A1%E5%9B%BE%E7%89%87_20260204133632_1330_96%20-%20%E5%89%AF%E6%9C%AC.jpg">
+    <!-- 关于我 -->
+    <section id="about" class="bg-[#1E3A2E] text-white py-16 md:py-24">
+        <div class="container mx-auto px-4">
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
+                <div class="overflow-hidden rounded-lg">
+                    <img src="https://images.unsplash.com/photo-1580489944761-15a19d654956?auto=format&fit=crop&w=800&q=80" 
+                         alt="Professional Photo" 
+                         class="w-full h-auto object-cover card-hover">
+                </div>
+                <div>
+                    <h2 class="font-playfair text-4xl md:text-5xl font-bold mb-8">关于我</h2>
+                    <p class="text-lg mb-6 leading-relaxed">
+                        我是一名拥有两年经验的专业口译员，毕业于南昌大学，拥有英语和经济学双学士学位及翻译硕士（英语口译方向）学位。我擅长提供高质量的中英双向同声传译和交替传译服务，曾服务于众多国际会议、商务谈判和高端活动。
+                    </p>
+                    <div class="space-y-4 mt-8">
+                        <div class="flex items-center">
+                            <span class="w-24 font-semibold">语言能力:</span>
+                            <span>英语 (母语级), 中文 (母语)</span>
+                        </div>
+                        <div class="flex items-center">
+                            <span class="w-24 font-semibold">专业领域:</span>
+                            <span>商务、法律、科技、医疗</span>
+                        </div>
+                        <div class="flex items-center">
+                            <span class="w-24 font-semibold">联系方式:</span>
+                            <span>13846475807@163.com | +86 138 4647 5807</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
 
-        <h2>证书与能力</h2>
-        <ul>
-            <li>英语专业八级</li>
-            <li>上海高级口译</li>
-            <li>中英交替传译</li>
-        </ul>
-    </div>
+    <!-- 项目展示 -->
+    <section id="projects" class="bg-gray-900 py-16 md:py-24">
+        <div class="container mx-auto px-4">
+            <h2 class="text-3xl md:text-4xl font-bold text-white text-center mb-12">项目案例</h2>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                <!-- 项目卡片1 -->
+                <div class="relative group card-hover">
+                    <img src="XXX" 
+                         alt="Project 1" 
+                         class="w-full h-[500px] object-cover rounded-lg">
+                    <div class="absolute bottom-0 left-0 w-full bg-black/60 p-6 rounded-b-lg">
+                        <h3 class="text-xl font-bold text-white">国际商务峰会同声传译</h3>
+                        <p class="text-gray-300 mt-2">商务 · 2023年10月</p>
+                    </div>
+                    <!-- 悬浮交互元素 -->
+                    <div class="absolute top-1/4 left-1/4 opacity-0 group-hover:opacity-100 transition-opacity duration-500">
+                        <div class="w-24 h-24 bg-yellow-400 rounded-full flex items-center justify-center text-black font-bold">
+                            点击查看
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 项目卡片2 -->
+                <div class="relative group card-hover">
+                    <img src="XXX" 
+                         alt="Project 2" 
+                         class="w-full h-[500px] object-cover rounded-lg">
+                    <div class="absolute bottom-0 left-0 w-full bg-black/60 p-6 rounded-b-lg">
+                        <h3 class="text-xl font-bold text-white">跨国并购法律文件翻译</h3>
+                        <p class="text-gray-300 mt-2">法律 · 2024年3月</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 证书列表 -->
+    <section id="certifications" class="bg-white py-16 md:py-24">
+        <div class="container mx-auto px-4">
+            <h2 class="text-3xl md:text-4xl font-bold text-center mb-12">专业证书</h2>
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- 证书1 -->
+                <div class="bg-gray-100 p-6 rounded-lg shadow-md hover:shadow-lg transition-shadow">
+                    <h3 class="text-xl font-bold mb-2">CATTI 二级口译证书</h3>
+                    <p class="text-gray-600">中国翻译专业资格（水平）考试</p>
+                    <p class="text-sm text-gray-500 mt-2">2026年获得</p>
+                </div>
+                <!-- 证书2 -->
+                <div class="bg-gray-100 p-6 rounded-lg shadow-md hover:shadow-lg transition-shadow">
+                    <h3 class="text-xl font-bold mb-2">NAATI 专业口译认证</h3>
+                    <p class="text-gray-600">上海英语高级口译证书</p>
+                    <p class="text-sm text-gray-500 mt-2">2025年获得</p>
+                </div>
+                <!-- 证书3 -->
+                <div class="bg-gray-100 p-6 rounded-lg shadow-md hover:shadow-lg transition-shadow">
+                    <h3 class="text-xl font-bold mb-2">雅思 7.5 分</h3>
+                    <p class="text-gray-600">国际英语语言测试系统</p>
+                    <p class="text-sm text-gray-500 mt-2">2025年获得</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 页脚 -->
+    <footer class="bg-black text-white py-8">
+        <div class="container mx-auto px-4 text-center">
+            <p>&copy; 2024 [王帅] - 专业口译服务</p>
+        </div>
+    </footer>
 </body>
 </html>
